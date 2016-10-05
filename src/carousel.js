@@ -6,6 +6,7 @@ import tweenState from 'kw-react-tween-state';
 import decorators from './decorators';
 import assign from 'object-assign';
 import ExecutionEnvironment from 'exenv';
+import classnames from 'classnames';
 
 const addEvent = function(elem, type, eventHandle) {
   if (elem === null || typeof (elem) === 'undefined') {
@@ -613,7 +614,8 @@ const Carousel = React.createClass({
     var self = this;
     var positionValue = this.props.vertical ? this.getTweeningValue('top') : this.getTweeningValue('left');
     return React.Children.map(children, function(child, index) {
-      return <li className="slider-slide" style={self.getSlideStyles(index, positionValue)} key={index}>{child}</li>
+      var className = classnames('slider-slide', {active: index === self.state.currentSlide})
+      return <li className={className} style={self.getSlideStyles(index, positionValue)} key={index}>{child}</li>
     });
   },
 

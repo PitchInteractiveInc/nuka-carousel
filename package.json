@@ -4,6 +4,7 @@
   "description": "Pure React Carousel",
   "main": "index.js",
   "dependencies": {
+    "classnames": "^2.2.5",
     "exenv": "^1.2.0",
     "object-assign": "^4.1.0",
     "kw-react-tween-state": "^0.1.5"
